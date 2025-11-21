@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageViewer.js - 现代化图片预览组件演示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: zoom-in;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .instructions {
+            background: #e8f4fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            padding: 8px 0;
+            color: #34495e;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .instructions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .code-example h4 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0 5px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .demo-section {
+                padding: 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ImageViewer.js</h1>
+            <p>一个现代化的、轻量级的、可自定义的图片预览 Web Component</p>
+            <div style="margin-top: 20px;">
+                <span class="badge">Web Components</span>
+                <span class="badge">零依赖</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">MIT License</span>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="section-title">核心特性</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>智能缩放</h3>
+                    <p>鼠标滚轮平滑缩放，支持自定义缩放范围</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖱️</div>
+                    <h3>拖拽平移</h3>
+                    <p>缩放后可拖拽查看图片细节，操作流畅自然</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>图片旋转</h3>
+                    <p>支持90度增量旋转，完美适配各种图片方向</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>一键下载</h3>
+                    <p>快速下载原图，支持自定义文件名</p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3>使用说明</h3>
+                <ul>
+                    <li><strong>点击图片</strong> - 打开全屏预览模式</li>
+                    <li><strong>鼠标滚轮</strong> - 缩放图片（支持自定义范围）</li>
+                    <li><strong>拖拽图片</strong> - 在缩放状态下平移查看</li>
+                    <li><strong>旋转按钮</strong> - 90度旋转图片</li>
+                    <li><strong>下载按钮</strong> - 保存原图到本地</li>
+                    <li><strong>导航按钮</strong> - 在多张图片间切换</li>
+                    <li><strong>ESC 键</strong> - 快速关闭预览</li>
+                    <li><strong>左右箭头</strong> - 键盘切换图片</li>
+                </ul>
+            </div>
+
+            <h3 style="text-align: center; color: #2c3e50; margin: 40px 0 20px;">点击下方图片体验预览功能</h3>
+            
+            <div class="image-grid">
+                <img src="https://picsum.photos/id/237/400/300" class="previewable" alt="一只可爱的小黑狗，眼神纯真可爱" data-highres="https://picsum.photos/id/237/1600/1200">
+                <img src="https://picsum.photos/id/10/400/300" class="previewable" alt="壮丽的山景和清澈的湖泊，天空湛蓝" data-highres="https://picsum.photos/id/10/1600/1200">
+                <img src="https://picsum.photos/id/1005/400/300" class="previewable" alt="宁静的湖面倒映着天空和山脉" data-highres="https://picsum.photos/id/1005/1600/1200">
+                <img src="https://picsum.photos/id/1015/400/300" class="previewable" alt="覆盖着皑皑白雪的雄伟山峰" data-highres="https://picsum.photos/id/1015/1600/1200">
+                <img src="https://picsum.photos/id/1025/400/300" class="previewable" alt="可爱的松鼠在树枝上觅食" data-highres="https://picsum.photos/id/1025/1600/1200">
+                <img src="https://picsum.photos/id/1035/400/300" class="previewable" alt="茂密的森林和阳光透过树叶" data-highres="https://picsum.photos/id/1035/1600/1200">
+                <img src="https://picsum.photos/id/106/400/300" class="previewable" alt="美丽的海滩和椰子树，海浪轻拍沙滩" data-highres="https://picsum.photos/id/106/1600/1200">
+                <img src="https://picsum.photos/id/119/400/300" class="previewable" alt="宏伟的古典建筑，展现历史韵味" data-highres="https://picsum.photos/id/119/1600/1200">
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="color: #7f8c8d; font-style: italic;">
+                    提示：部分图片使用了高分辨率版本，预览时会加载更清晰的图片
+                </p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="section-title">快速集成</h2>
+            
+            <div class="code-example">
+                <h4>基础用法（自动初始化）</h4>
+                <pre><code>&lt;!-- 引入组件 --&gt;
+&lt;script src=&quot;image-viewer.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- 你的图片 --&gt;
+&lt;img src=&quot;image1.jpg&quot; alt=&quot;图片描述&quot;&gt;
+&lt;img src=&quot;image2.jpg&quot; alt=&quot;另一张图片&quot;&gt;</code></pre>
+            </div>
+
+            <div class="code-example">
+                <h4>高级配置（使用 data 属性）</h4>
+                <pre><code>&lt;script src=&quot;image-viewer.js&quot; 
+        id=&quot;gd-image-viewer&quot;
+        data-target-selector=&quot;.previewable&quot;
+        data-max-scale=&quot;8&quot;
+        data-min-scale=&quot;0.3&quot;
+        data-allow-rotate=&quot;true&quot;
+        data-allow-download=&quot;true&quot;&gt;
+&lt;/script&gt;
+
+&lt;!-- 只有带 previewable 类的图片可预览 --&gt;
+&lt;img src=&quot;image1.jpg&quot; class=&quot;previewable&quot; alt=&quot;图片1&quot;&gt;
+&lt;img src=&quot;image2.jpg&quot; class=&quot;previewable&quot; alt=&quot;图片2&quot;&gt;
+&lt;img src=&quot;image3.jpg&quot; alt=&quot;这张图片不会被预览&quot;&gt;</code></pre>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>ImageViewer.js - 让图片预览变得简单而强大！</p>
+            <p style="margin-top: 10px; opacity: 0.8;">
+                MIT License · 
+                <a href="https://github.com/mrhuo/image-viewer" target="_blank">GitHub 仓库</a> ·
+                <a href="README.md">查看文档</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- 使用 data 属性配置 ImageViewer -->
+    <script src="dist/image-viewer.min.js" 
+            id="gd-image-viewer"
+            data-target-selector=".previewable"
+            data-max-scale="8"
+            data-min-scale="0.3"
+            data-allow-rotate="true"
+            data-allow-download="true">
+    </script>
+</body>
+</html>
