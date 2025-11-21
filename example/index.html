@@ -226,7 +226,8 @@
             <div style="margin-top: 20px;">
                 <span class="badge">Web Components</span>
                 <span class="badge">零依赖</span>
-                <span class="badge">TypeScript</span>
+                <span class="badge">零配置</span>
+                <span class="badge">JavaScript</span>
                 <span class="badge">MIT License</span>
             </div>
         </div>
@@ -235,6 +236,16 @@
             <h2 class="section-title">核心特性</h2>
             
             <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>零配置集成</h3>
+                    <p>只需引入单个JS文件，无需额外配置即可使用</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>全平台兼容</h3>
+                    <p>零依赖，完美兼容所有现代浏览器，手机PC自适应</p>
+                </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
                     <h3>智能缩放</h3>
@@ -297,7 +308,7 @@
             <div class="code-example">
                 <h4>基础用法（自动初始化）</h4>
                 <pre><code>&lt;!-- 引入组件 --&gt;
-&lt;script src=&quot;image-viewer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../dist/image-viewer.min.js&quot;&gt;&lt;/script&gt;
 
 &lt;!-- 你的图片 --&gt;
 &lt;img src=&quot;image1.jpg&quot; alt=&quot;图片描述&quot;&gt;
@@ -306,7 +317,7 @@
 
             <div class="code-example">
                 <h4>高级配置（使用 data 属性）</h4>
-                <pre><code>&lt;script src=&quot;image-viewer.js&quot; 
+                <pre><code>&lt;script src=&quot;../dist/image-viewer.min.js&quot; 
         id=&quot;gd-image-viewer&quot;
         data-target-selector=&quot;.previewable&quot;
         data-max-scale=&quot;8&quot;
@@ -328,13 +339,13 @@
             <p style="margin-top: 10px; opacity: 0.8;">
                 MIT License · 
                 <a href="https://github.com/mrhuo/image-viewer" target="_blank">GitHub 仓库</a> ·
-                <a href="README.md">查看文档</a>
+                <a href="../README.md">查看文档</a>
             </p>
         </div>
     </div>
 
     <!-- 使用 data 属性配置 ImageViewer -->
-    <script src="dist/image-viewer.min.js" 
+    <script src="../dist/image-viewer.min.js" 
             id="gd-image-viewer"
             data-target-selector=".previewable"
             data-max-scale="8"

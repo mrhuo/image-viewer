@@ -1,62 +1,52 @@
 # ImageViewer.js
 
-A modern, lightweight, and customizable image previewer Web Component.
+A lightweight, zero-dependency image previewer Web Component. Just include one JavaScript file to add beautiful image preview functionality to your website.
 
 **Version: 1.0.0**
 
 [中文文档](README.zh-cn.md)
 
-## ✨ Features
-
-- **Zero dependencies** - Pure vanilla JavaScript, no external libraries required
-- **Web Components implementation** - Built with modern Web Components standard
-- **Strong compatibility** - Works across all modern browsers
-- **Mouse wheel zooming** - Smooth zoom in/out with mouse wheel
-- **Drag to pan** - Drag images when zoomed in for better viewing
-- **Image rotation** - Rotate images 90° clockwise with each click
-- **Download support** - Download original images with one click
-- **Multi-image navigation** - Navigate between multiple images with prev/next buttons
-- **Image captions** - Display image captions from `alt` attribute
-- **Keyboard shortcuts** - ESC to close, Arrow keys for navigation
-- **High-resolution loading** - Progressive loading from low-res to high-res images
-- **Responsive design** - Works perfectly on all screen sizes
-- **Customizable** - Highly configurable via JavaScript options
-
 ## 🚀 Quick Start
 
-### Method 1: Auto-initialization (Recommended)
-
-Add the script to your HTML:
+Add the script to your HTML and all images become clickable for full-screen preview:
 
 ```html
-<script src="path/to/image-viewer.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrhuo/image-viewer@1.0.0/dist/image-viewer.min.js"></script>
 ```
 
-The component will automatically initialize and work with all `<img>` elements on the page.
+That's it! All `<img>` elements on your page will now open in a beautiful full-screen preview when clicked.
 
-### Method 2: Manual initialization
+## ✨ Core Features
 
-```html
-<script type="module">
-  import ImageViewer from './src/image-viewer.js';
-  
-  const viewer = new ImageViewer({
-    targetSelector: 'img',
-    maxScale: 5,
-    minScale: 0.5,
-    allowRotate: true,
-    allowDownload: true
-  });
-  
-  document.body.appendChild(viewer);
-</script>
-```
+- **One-line setup** - Just include the script, no configuration needed
+- **Zero dependencies** - Pure vanilla JavaScript, works everywhere
+- **Full-screen preview** - Click any image for immersive viewing
+- **Mouse wheel zoom** - Smooth zoom in/out with mouse wheel
+- **Drag to pan** - Move around when zoomed in
+- **Keyboard shortcuts** - ESC to close, arrow keys for navigation
+- **Multi-image support** - Navigate between multiple images
+- **Responsive design** - Works perfectly on all devices
 
-### Method 3: HTML configuration
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/screenshot1.png" alt="Desktop Preview" width="45%" style="margin: 10px;">
+  <img src="screenshots/screenshot-pc2.png" alt="Desktop Controls" width="45%" style="margin: 10px;">
+  <br>
+  <img src="screenshots/screenshot-mobile.png" alt="Mobile Preview" width="30%" style="margin: 10px;">
+</div>
+
+**Desktop Experience** - Full-screen preview with intuitive controls for zoom, rotation, and navigation
+<br>
+**Mobile Optimized** - Touch-friendly interface with smooth gestures and responsive design
+
+## ⚙️ Advanced Configuration
+
+For custom behavior, you can configure the viewer:
 
 ```html
 <script id="gd-image-viewer" 
-        src="path/to/image-viewer.js"
+        src="dist/image-viewer.min.js"
         data-target-selector=".gallery-img"
         data-max-scale="8"
         data-min-scale="0.3"
@@ -65,138 +55,34 @@ The component will automatically initialize and work with all `<img>` elements o
 </script>
 ```
 
-## ⚙️ Configuration Options
+### Configuration Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `targetSelector` | string | `'img'` | CSS selector for images that trigger the viewer |
-| `maxScale` | number | `5` | Maximum zoom scale factor |
-| `minScale` | number | `0.5` | Minimum zoom scale factor |
-| `allowRotate` | boolean | `true` | Enable/disable image rotation |
-| `allowDownload` | boolean | `true` | Enable/disable image download |
-
-## 📖 API Reference
-
-### Constructor
-
-```javascript
-const viewer = new ImageViewer(options);
-```
-
-### Methods
-
-- `showImageByIndex(index)` - Display image by index
-- `showNextImage()` - Show next image
-- `showPrevImage()` - Show previous image
-- `closePreview()` - Close the viewer
-- `rotateImage()` - Rotate current image
-- `downloadImage()` - Download current image
-- `resetTransform()` - Reset zoom, rotation, and position
-
-### Properties
-
-- `currentIndex` - Current image index
-- `currentScale` - Current zoom scale
-- `currentRotation` - Current rotation angle
-- `imageList` - Array of target images
-
-## 🔧 Advanced Usage
-
-### High-resolution Image Loading
-
-Use `data-highres` attribute for progressive loading:
-
-```html
-<img src="thumbnail.jpg" data-highres="high-resolution.jpg" alt="Image description">
-```
-
-### Custom Image Selection
-
-Target specific images:
-
-```javascript
-const viewer = new ImageViewer({
-  targetSelector: '.gallery-image, .photo-preview'
-});
-```
-
-### Dynamic Image Updates
-
-The component automatically tracks DOM changes and handles dynamically added images.
-
-## 🎯 Browser Support
-
-- Chrome 61+
-- Firefox 63+
-- Safari 10.1+
-- Edge 79+
-
-## 📦 Installation
-
-### Direct Download
-
-Download `image-viewer.js` from the releases page and include it in your project.
-
-### NPM (Coming Soon)
-
-```bash
-TODO
-```
-
-### CDN (Coming Soon)
-
-```html
-TODO
-```
+| Option | Default | Description |
+|--------|---------|-------------|
+| `data-target-selector` | `'img'` | CSS selector for clickable images |
+| `data-max-scale` | `5` | Maximum zoom level |
+| `data-min-scale` | `0.5` | Minimum zoom level |
+| `data-allow-rotate` | `true` | Enable image rotation |
+| `data-allow-download` | `true` | Enable image download |
 
 ## 🛠️ Development
-
-### Prerequisites
-
-- Node.js 14+
-- npm or yarn
-
-### Installation
-
-```bash
-# Install dependencies
-npm install
-```
 
 ### Build
 
 ```bash
-# Minify for production
+npm install
 npm run build
 ```
 
-This will create a minified version in `dist/image-viewer.min.js` with ~56% size reduction (including CSS optimization).
-
-### Development Server
-
-```bash
-# Start local server for testing
-npm run dev
-```
+Creates minified version in `dist/image-viewer.min.js` with ~56.81% size reduction.
 
 ### Demo
 
-Open `demo.html` in your browser to see all features in action.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Open `example/index.html` to see it in action.
 
 ## 📄 License
 
-MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🔗 Links
-
-- [Demo](demo.html)
-- [中文文档](README.zh-cn.md)
-- [Issues](https://github.com/mrhuo/image-viewer/issues)
-- [Releases](https://github.com/mrhuo/image-viewer/releases)
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 

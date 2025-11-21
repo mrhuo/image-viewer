@@ -25,7 +25,7 @@ function processTemplateLiterals(code) {
     if (templateContent.includes('style>') || templateContent.includes('#')) {
       return '`' + templateContent.replace(/<style>([\s\S]*?)<\/style>/g, (styleMatch, cssContent) => {
         return `<style>${minifyCSS(cssContent)}</style>`;
-      }) + '`';
+      }).replace(/\n\s*/g, '') + '`';
     }
     return match;
   });
