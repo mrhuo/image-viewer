@@ -65,6 +65,12 @@ For custom behavior, you can configure the viewer:
 | `data-allow-rotate` | `true` | Enable image rotation |
 | `data-allow-download` | `true` | Enable image download |
 
+### High Definition Preview
+
+`<img src="default_src" data-highres="high_definition_src">`
+
+You can configure the value of the data-highres attribute for img, and clicking on it will open a high-resolution preview image.
+
 ## 🛠️ Development
 
 ### Build

@@ -65,6 +65,12 @@
 | `data-allow-rotate` | `true` | 是否允许旋转图片 |
 | `data-allow-download` | `true` | 是否允许下载图片 |
 
+### 高清图片预览
+
+`<img src="default_src" data-highres="high_definition_src">`
+
+可以通过配置 img 的 data-highres 属性来区别预览高清图片，实现默认显示小图，点击预览大图。
+
 ## 🛠️ 开发
 
 ### 构建
