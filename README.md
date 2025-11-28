@@ -19,7 +19,7 @@ A lightweight, zero-dependency image previewer Web Component. Just include one J
 
 **Last Version: 1.0.0**
 
-[中文文档](README.zh-cn.md)
+[中文文档](https://github.com/mrhuo/image-viewer/raw/main/README.zh-cn.md)
 
 ## 🚀 Quick Start
 
@@ -99,7 +99,7 @@ Creates minified version in `dist/image-viewer.min.js` with ~56.81% size reducti
 
 ### Demo
 
-Open `https://mrhuo.github.io/image-viewer/docs/index.html` to see it in action.
+Open [https://mrhuo.github.io/image-viewer/](https://mrhuo.github.io/image-viewer/) to see it in action.
 
 ## 📄 License
 

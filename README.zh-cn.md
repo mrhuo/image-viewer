@@ -19,7 +19,7 @@
 
 **最新版本: 1.0.0**
 
-[English Documentation](README.md)
+[English Documentation](https://github.com/mrhuo/image-viewer/raw/main/README.md)
 
 ## 🚀 快速开始
 
@@ -99,7 +99,7 @@ npm run build
 
 ### 演示
 
-打开 `https://mrhuo.github.io/image-viewer/docs/index.html` 查看实际效果。
+打开 [https://mrhuo.github.io/image-viewer/](https://mrhuo.github.io/image-viewer/) 查看实际效果。
 
 ## 📄 许可证
 
