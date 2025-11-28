@@ -1,8 +1,23 @@
+<div align="center">
+
+![](https://github.com/mrhuo/image-viewer/raw/main/docs/assets/slogon.png)
+
+</div>
+
 # ImageViewer.js
+
+<div align="center">
+
+![License](https://img.shields.io/github/license/mrhuo/image-viewer?style=plastic&color=6e5494)
+![Stars](https://img.shields.io/github/stars/mrhuo/image-viewer?style=plastic&logo=github&color=ffcb2b)
+![Forks](https://img.shields.io/github/forks/mrhuo/image-viewer?style=plastic&logo=github&color=6f42c1)
+[![](https://data.jsdelivr.com/v1/package/gh/mrhuo/image-viewer/badge)](https://www.jsdelivr.com/package/gh/mrhuo/image-viewer)
+
+</div>
 
 一个轻量级、零依赖的图片预览 Web Component。只需引入一个 JavaScript 文件，即可为您的网站添加精美的图片预览功能。
 
-**版本: 1.0.0**
+**最新版本: 1.0.0**
 
 [English Documentation](README.md)
 
@@ -30,10 +45,10 @@
 ## 📸 效果展示
 
 <div align="center">
-  <img src="screenshots/screenshot1.png" alt="桌面端预览效果" width="45%" style="margin: 10px;">
-  <img src="screenshots/screenshot-pc2.png" alt="桌面端控制界面" width="45%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot1.png" alt="桌面端预览效果" width="45%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot-pc2.png" alt="桌面端控制界面" width="45%" style="margin: 10px;">
   <br>
-  <img src="screenshots/screenshot-mobile.png" alt="移动端预览效果" width="30%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot-mobile.png" alt="移动端预览效果" width="30%" style="margin: 10px;">
 </div>
 
 **桌面端体验** - 全屏预览，提供直观的缩放、旋转和导航控制
@@ -46,7 +61,7 @@
 
 ```html
 <script id="gd-image-viewer" 
-        src="dist/image-viewer.min.js"
+        src="https://cdn.jsdelivr.net/gh/mrhuo/image-viewer@1.0.0/dist/image-viewer.min.js"
         data-target-selector=".gallery-img"
         data-max-scale="8"
         data-min-scale="0.3"
@@ -84,11 +99,11 @@ npm run build
 
 ### 演示
 
-打开 `example/index.html` 查看实际效果。
+打开 `https://mrhuo.github.io/image-viewer/docs/index.html` 查看实际效果。
 
 ## 📄 许可证
 
-MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+MIT 许可证 - 查看 [LICENSE](https://github.com/mrhuo/image-viewer/raw/main/LICENSE) 文件了解详情。
 
 ---
 

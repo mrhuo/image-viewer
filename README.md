@@ -1,8 +1,23 @@
+<div align="center">
+
+![](https://github.com/mrhuo/image-viewer/raw/main/docs/assets/slogon.png)
+
+</div>
+
 # ImageViewer.js
+
+<div align="center">
+
+![License](https://img.shields.io/github/license/mrhuo/image-viewer?style=plastic&color=6e5494)
+![Stars](https://img.shields.io/github/stars/mrhuo/image-viewer?style=plastic&logo=github&color=ffcb2b)
+![Forks](https://img.shields.io/github/forks/mrhuo/image-viewer?style=plastic&logo=github&color=6f42c1)
+[![](https://data.jsdelivr.com/v1/package/gh/mrhuo/image-viewer/badge)](https://www.jsdelivr.com/package/gh/mrhuo/image-viewer)
+
+</div>
 
 A lightweight, zero-dependency image previewer Web Component. Just include one JavaScript file to add beautiful image preview functionality to your website.
 
-**Version: 1.0.0**
+**Last Version: 1.0.0**
 
 [中文文档](README.zh-cn.md)
 
@@ -30,10 +45,10 @@ That's it! All `<img>` elements on your page will now open in a beautiful full-s
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="screenshots/screenshot1.png" alt="Desktop Preview" width="45%" style="margin: 10px;">
-  <img src="screenshots/screenshot-pc2.png" alt="Desktop Controls" width="45%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot1.png" alt="Desktop Preview" width="45%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot-pc2.png" alt="Desktop Controls" width="45%" style="margin: 10px;">
   <br>
-  <img src="screenshots/screenshot-mobile.png" alt="Mobile Preview" width="30%" style="margin: 10px;">
+  <img src="https://github.com/mrhuo/image-viewer/raw/main/screenshots/screenshot-mobile.png" alt="Mobile Preview" width="30%" style="margin: 10px;">
 </div>
 
 **Desktop Experience** - Full-screen preview with intuitive controls for zoom, rotation, and navigation
@@ -46,7 +61,7 @@ For custom behavior, you can configure the viewer:
 
 ```html
 <script id="gd-image-viewer" 
-        src="dist/image-viewer.min.js"
+        src="https://cdn.jsdelivr.net/gh/mrhuo/image-viewer@1.0.0/dist/image-viewer.min.js"
         data-target-selector=".gallery-img"
         data-max-scale="8"
         data-min-scale="0.3"
@@ -84,11 +99,11 @@ Creates minified version in `dist/image-viewer.min.js` with ~56.81% size reducti
 
 ### Demo
 
-Open `example/index.html` to see it in action.
+Open `https://mrhuo.github.io/image-viewer/docs/index.html` to see it in action.
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](https://github.com/mrhuo/image-viewer/raw/main/LICENSE) file for details.
 
 ---
 
