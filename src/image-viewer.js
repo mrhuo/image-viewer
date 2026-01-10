@@ -630,6 +630,14 @@ class ImageViewer extends HTMLElement {
     const newScale = this.currentScale + delta;
 
     if (newScale >= this.config.minScale && newScale <= this.config.maxScale) {
+      const ratio = newScale / this.currentScale;
+      const rect = this.overlay.getBoundingClientRect();
+
+      const offsetX = e.clientX - (rect.left + rect.width / 2);
+      const offsetY = e.clientY - (rect.top + rect.height / 2);
+
+      this.currentX = offsetX * (1 - ratio) + this.currentX * ratio;
+      this.currentY = offsetY * (1 - ratio) + this.currentY * ratio;
       this.currentScale = newScale;
       this.updateImageTransform();
     }
